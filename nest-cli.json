@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json.schemastore.org/nest-cli",
+  "collection": "@nestjs/schematics",
+  "sourceRoot": "apps/api-gateway/src",
+  "compilerOptions": {
+    "deleteOutDir": true,
+    "webpack": true,
+    "tsConfigPath": "apps/api-gateway/tsconfig.app.json"
+  },
+  "monorepo": true,
+  "root": "apps/api-gateway",
+  "projects": {
+    "api-gateway": {
+      "type": "application",
+      "root": "apps/api-gateway",
+      "entryFile": "main",
+      "sourceRoot": "apps/api-gateway/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/api-gateway/tsconfig.app.json"
+      }
+    },
+    "users-microservice": {
+      "type": "application",
+      "root": "apps/users-microservice",
+      "entryFile": "main",
+      "sourceRoot": "apps/users-microservice/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/users-microservice/tsconfig.app.json"
+      }
+    },
+    "mailer-microservice": {
+      "type": "application",
+      "root": "apps/mailer-microservice",
+      "entryFile": "main",
+      "sourceRoot": "apps/mailer-microservice/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/mailer-microservice/tsconfig.app.json"
+      }
+    },
+    "core": {
+      "type": "library",
+      "root": "libs/core",
+      "entryFile": "index",
+      "sourceRoot": "libs/core/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/core/tsconfig.lib.json"
+      }
+    },
+    "shared": {
+      "type": "library",
+      "root": "libs/shared",
+      "entryFile": "index",
+      "sourceRoot": "libs/shared/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/shared/tsconfig.lib.json"
+      }
+    },
+    "files-microservice": {
+      "type": "application",
+      "root": "apps/files-microservice",
+      "entryFile": "main",
+      "sourceRoot": "apps/files-microservice/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/files-microservice/tsconfig.app.json"
+      }
+    }
+  }
+}
